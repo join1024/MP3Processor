@@ -5,7 +5,7 @@
 https://ffmpeg.zeranoe.com/builds/  
 
 2. 用maven编译后得到程序包  
- MP3TagProcessor-0.0.1-SNAPSHOT.jar  
+ MP3Processor-0.0.1-SNAPSHOT.jar  
  
 3. 运行程序  
  ```shell
