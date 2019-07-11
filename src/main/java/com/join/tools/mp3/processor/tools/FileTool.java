@@ -12,8 +12,8 @@ import java.io.*;
 @Slf4j
 public class FileTool {
 
-	public static void copyFile(String resourceFileName,String ffmpegDir,String destFilePath){
-		String stringData=processFile(resourceFileName,ffmpegDir);
+	public static void copyFile(String resourceFileName,String destFilePath,String ffmpegDir,String destDir){
+		String stringData=processFile(resourceFileName,ffmpegDir,destDir);
 		log.info("\n====================== file content is : \n{}",stringData);
 		writeToFile(stringData,destFilePath);
 	}
@@ -27,7 +27,7 @@ public class FileTool {
 		}
 	}
 
-	public static String processFile(String resourceFileName,String ffmpegDir){
+	public static String processFile(String resourceFileName,String ffmpegDir,String destDir){
 
 		byte[] bytes=new byte[1024];
 		int length=0;
@@ -45,7 +45,7 @@ public class FileTool {
 		}
 
 		//变量替换为实际路径
-		String stringData=stringBuilder.toString().replace("${ffmpeg.dir}",ffmpegDir);
+		String stringData=stringBuilder.toString().replace("${ffmpeg.dir}",ffmpegDir).replace("${mp3.destDir}",destDir);
 
 		return stringData;
 	}

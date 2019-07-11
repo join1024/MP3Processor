@@ -90,7 +90,7 @@ public class Mp3ProcessorApplication {
 	private void exeCommandBatch() {
 		String path=System.getProperty("user.dir");
 		tempCmdFile=path+File.separator+"temp_mp3Cutter.bat";
-		FileTool.copyFile("/mp3Cutter.bat",ffmpegDir,tempCmdFile);
+		FileTool.copyFile("/mp3Cutter.bat",tempCmdFile,ffmpegDir,mp3DestDir);
 		CMDTool.excuteCmdBatch(tempCmdFile);
 
 	}

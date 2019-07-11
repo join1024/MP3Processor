@@ -1,8 +1,8 @@
 @echo off
 echo ############# process begin ########################
 D:
-cd ${ffmpeg.dir}
-for %%s in (${mp3.destDir}*.mp3) do (
+cd D:\ProgramDev\ffmpeg-20190705-a514244-win64-static\bin
+for %%s in (C:\Users\join0\Downloads\dest\*.mp3) do (
 	rem 得到mp3文件名，包含路径
 	echo %%s
 	rem 拼接得到将要输出的mp3文件名，包含路径
