@@ -1,6 +1,6 @@
 @echo off
 echo ############# process begin ########################
-D:
+${file.drive}
 cd ${ffmpeg.dir}
 for %%s in (${mp3.destDir}*.mp3) do (
 	rem 得到mp3文件名，包含路径

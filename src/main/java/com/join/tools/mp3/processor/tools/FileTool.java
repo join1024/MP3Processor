@@ -44,8 +44,21 @@ public class FileTool {
 			log.error("文件读取异常：resource file path = "+resourceFileName,e);
 		}
 
+		//得到盘符，如D盘：“D:”
+		String fileDrive=null;
+		int idx=ffmpegDir.indexOf(":");
+		if(idx>0){
+			fileDrive=ffmpegDir.substring(0,idx+1);
+		}
+
+		String stringData=stringBuilder.toString();
+		if(fileDrive!=null){
+			//盘符替换
+			stringData=stringData.replace("${file.drive}",fileDrive);
+		}
 		//变量替换为实际路径
-		String stringData=stringBuilder.toString().replace("${ffmpeg.dir}",ffmpegDir).replace("${mp3.destDir}",destDir);
+		stringData=stringData.replace("${ffmpeg.dir}",ffmpegDir);
+		stringData=stringData.replace("${mp3.destDir}",destDir);
 
 		return stringData;
 	}
