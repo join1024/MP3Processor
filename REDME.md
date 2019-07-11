@@ -1,4 +1,6 @@
 # mp3标签处理和裁剪    
+> 批量修改mp3的标题tag属性, 然后批量剪切前25秒的广告 
+
 1. 下载 ffmpeg  
 https://ffmpeg.zeranoe.com/builds/  
 
